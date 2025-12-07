@@ -2180,7 +2180,7 @@ if (isFloatingPoint!(CommonType!(T1, T2)) && isUniformRNG!UniformRandomNumberGen
     }
     enforce(_a <= _b,
             text("std.random.uniform(): invalid bounding interval ",
-                    boundaries[0], a, ", ", b, boundaries[1]));
+                    boundaries[0], a, ", ", b, boundaries[1], " --- ", _a, " ", _b));
     NumberType result =
         _a + (_b - _a) * cast(NumberType) (urng.front - urng.min)
         / (urng.max - urng.min);
